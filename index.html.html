@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In the MOOD for Climate Action — UNU Hub Climate Programme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 2rem;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.9rem 1.8rem;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #333;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            margin-left: 1rem;
+        }
+
+        .cta-button.secondary:hover {
+            background: #f9f9f9;
+        }
+
+        /* Stats */
+        .stats {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .stat {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Three Pathways */
+        .pathways {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .pathways h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pathway-card {
+            border: 1px solid #f0f0f0;
+            padding: 2rem;
+            border-radius: 4px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .pathway-card:hover {
+            border-color: #ddd;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .pathway-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .pathway-card.async .pathway-color {
+            background: #6366f1;
+        }
+
+        .pathway-card.sync .pathway-color {
+            background: #8b5cf6;
+        }
+
+        .pathway-card.partnership .pathway-color {
+            background: #ec4899;
+        }
+
+        .pathway-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pathway-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .pathway-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .pathway-card li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .pathway-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        /* Async Packages Grid */
+        .packages {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .packages h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            border: 1px solid #f0f0f0;
+            padding: 2rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .package-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .package-meta {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+        }
+
+        .explore-btn {
+            padding: 0.7rem 1.2rem;
+            background: #f0f0f0;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .explore-btn:hover {
+            background: #e0e0e0;
+        }
+
+        /* Thematic Clusters */
+        .clusters {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .clusters h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .cluster-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cluster-tag {
+            padding: 0.7rem 1.3rem;
+            background: #f9f9f9;
+            border: 1px solid #f0f0f0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* About */
+        .about {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .about h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .about p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .about a {
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+
+        /* Subscribe Section */
+        .subscribe {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .subscribe h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        #mc_embed_signup {
+            background: transparent !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        #mc_embed_signup form {
+            padding: 0 !important;
+        }
+
+        #mc_embed_signup h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        #mc_embed_signup .mc-field-group {
+            margin-bottom: 1.5rem;
+        }
+
+        #mc_embed_signup label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        #mc_embed_signup input[type="text"],
+        #mc_embed_signup input[type="email"] {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        #mc_embed_signup input[type="text"]:focus,
+        #mc_embed_signup input[type="email"]:focus {
+            outline: none;
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 2px rgba(26, 26, 26, 0.05);
+        }
+
+        #mc-embedded-subscribe {
+            padding: 0.9rem 1.8rem;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        #mc-embedded-subscribe:hover {
+            background: #333;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.2s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #1a1a1a;
+        }
+
+        .modal-body p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .modal-body h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            margin-left: 1.5rem;
+        }
+
+        .modal-body li {
+            margin-bottom: 0.5rem;
+            color: #666;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .modal-body li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        .modal-footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .modal-footer .cta-button {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            header {
+                padding: 1.5rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .pathway-grid,
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                width: 95%;
+            }
+
+            .cta-button.secondary {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">MOOD</div>
+        <nav>
+            <a href="#pathways">Pathways</a>
+            <a href="#packages">Async Modules</a>
+            <a href="#clusters">Themes</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>In the MOOD for Climate Action</h1>
+        <p>A United Nations University Hub program. Move from understanding global problems to building real solutions. Systems thinking, emotional intelligence, mentors, and a global community of peers.</p>
+        <button class="cta-button" onclick="document.location='https://forms.gle/GxayNNEfqip1C8EH9'">Apply Now</button>
+        <button class="cta-button secondary" onclick="document.getElementById('subscribe').scrollIntoView({behavior: 'smooth'})">Stay Updated</button>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stat">
+            <div class="stat-number">600+</div>
+            <div class="stat-label">Students Across Cohorts</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Countries Represented</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Thematic Clusters</div>
+        </div>
+    </section>
+
+    <!-- Three Pathways -->
+    <section class="pathways" id="pathways">
+        <h2>Three Ways to Engage</h2>
+        <div class="pathway-grid">
+            <div class="pathway-card async">
+                <div class="pathway-color"></div>
+                <h3>Async Modules</h3>
+                <p>Self-paced learning. Pick a module, work on your own schedule. Ideal if you want to explore without live commitments.</p>
+                <ul>
+                    <li>6 standalone modules</li>
+                    <li>Work at your own pace</li>
+                    <li>UN certification per module</li>
+                    <li>Access project seeds</li>
+                </ul>
+            </div>
+            <div class="pathway-card sync">
+                <div class="pathway-color"></div>
+                <h3>Synchronous Cohorts</h3>
+                <p>Live cohorts with structured timelines. Join peers from around the world, attend live sessions, build projects together.</p>
+                <ul>
+                    <li>Weekly live sessions</li>
+                    <li>Mentorship included</li>
+                    <li>Global peer network</li>
+                    <li>Fully funded</li>
+                </ul>
+            </div>
+            <div class="pathway-card partnership">
+                <div class="pathway-color"></div>
+                <h3>Institutional Partnerships</h3>
+                <p>Embed MOOD into your university curriculum. Full program or single modules adapted to your academic calendar.</p>
+                <ul>
+                    <li>Customizable structure</li>
+                    <li>Curriculum integration</li>
+                    <li>Faculty support</li>
+                    <li>Bulk student access</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Async Packages -->
+    <section class="packages" id="packages">
+        <h2>Explore Self-Paced Modules</h2>
+        <div class="packages-grid">
+            <div class="package-card">
+                <h4>Ikigai: Finding Your Purpose</h4>
+                <p>Reflect on your values, strengths, and what drives you. A foundation for understanding where you stand in relation to climate action.</p>
+                <div class="package-meta">~2 weeks | Interactive exercises | Reflective journal</div>
+                <button class="explore-btn" onclick="openModal('modal-ikigai')">Explore More</button>
+            </div>
+            <div class="package-card">
+                <h4>Climate Essentials</h4>
+                <p>Systems thinking applied to climate. Learn how environmental, social, and economic systems interconnect and drive the climate crisis.</p>
+                <div class="package-meta">~3 weeks | Video lessons | Quizzes</div>
+                <button class="explore-btn" onclick="openModal('modal-climate')">Explore More</button>
+            </div>
+            <div class="package-card">
+                <h4>Story of Me</h4>
+                <p>Craft your personal climate narrative. Articulate your relationship to climate action and the role you want to play.</p>
+                <div class="package-meta">~2 weeks | Reflective writing | Peer feedback</div>
+                <button class="explore-btn" onclick="openModal('modal-story')">Explore More</button>
+            </div>
+            <div class="package-card">
+                <h4>Foresight: Pathways for Change</h4>
+                <p>Explore future-oriented scenarios. Imagine different pathways for climate action and identify where your skills fit.</p>
+                <div class="package-meta">~2 weeks | Scenario planning | Group dialogue</div>
+                <button class="explore-btn" onclick="openModal('modal-foresight')">Explore More</button>
+            </div>
+            <div class="package-card">
+                <h4>Project Ideation & Mentoring</h4>
+                <p>Turn insights into action. Design a locally relevant climate project with guidance from experienced mentors.</p>
+                <div class="package-meta">~3 weeks | Mentorship | Project planning</div>
+                <button class="explore-btn" onclick="openModal('modal-ideation')">Explore More</button>
+            </div>
+            <div class="package-card">
+                <h4>Build & Prototype</h4>
+                <p>Create a tangible solution. Develop and test an MVP for your project, ready for potential incubation.</p>
+                <div class="package-meta">~4 weeks | Hands-on building | Iteration</div>
+                <button class="explore-btn" onclick="openModal('modal-build')">Explore More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thematic Clusters -->
+    <section class="clusters" id="clusters">
+        <h2>Thematic Clusters</h2>
+        <div class="cluster-tags">
+            <span class="cluster-tag">🔋 Sustainable Energy</span>
+            <span class="cluster-tag">♻️ Circular Economy</span>
+            <span class="cluster-tag">🌾 Resilient Agriculture</span>
+            <span class="cluster-tag">💧 Water Security</span>
+            <span class="cluster-tag">🏙️ Urban Sustainability</span>
+            <span class="cluster-tag">🌿 Biodiversity</span>
+            <span class="cluster-tag">⚖️ Climate Justice</span>
+            <span class="cluster-tag">🩺 Climate & Health</span>
+            <span class="cluster-tag">📢 Communication</span>
+            <span class="cluster-tag">📚 Education</span>
+            <span class="cluster-tag">🤝 Community Resilience</span>
+            <span class="cluster-tag">🌍 And 4 more themes</span>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2>About MOOD</h2>
+        <p>In the MOOD for Climate Action is an experiential, learner-centred program created by the <strong>Learning Planet Institute</strong>, a United Nations University hub on the Future of Learning and a UNESCO Category II center.</p>
+        <p>We believe young people have the knowledge, creativity, and agency to address climate challenges—but they need a space to explore, learn from peers, get mentored, and build real solutions. MOOD provides that space.</p>
+        <p>Whether you choose self-paced modules or join a synchronous cohort, you'll develop systems thinking, emotional intelligence, and social entrepreneurship skills. Each module earns UN certification. The full program leads to alumni status in the Future of Learning with Youth (FLY) track.</p>
+        <p>Ready to start? <a href="https://forms.gle/GxayNNEfqip1C8EH9">Apply here</a> or <a href="#subscribe">subscribe for updates</a>.</p>
+    </section>
+
+    <!-- Subscribe -->
+    <section class="subscribe" id="subscribe">
+        <h2>Stay Updated</h2>
+        <p style="color: #666; margin-bottom: 2rem;">Get news about upcoming cohorts, new modules, and learning opportunities from the Learning Planet Institute.</p>
+        
+        <!-- MailChimp Form -->
+        <div id="mc_embed_shell">
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;}
+            </style>
+            <div id="mc_embed_signup">
+                <form action="https://learningplanetinstitute.us2.list-manage.com/subscribe/post?u=a51b8074051a929013d7acc73&amp;id=77fefa00c1&amp;f_id=008b96e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+                        <div class="mc-field-group">
+                            <label for="mce-FNAME">First Name</label>
+                            <input type="text" name="FNAME" class="text" id="mce-FNAME" value="">
+                        </div>
+                        <div class="mc-field-group">
+                            <label for="mce-LNAME">Last Name</label>
+                            <input type="text" name="LNAME" class="text" id="mce-LNAME" value="">
+                        </div>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email <span style="color: #1a1a1a;">*</span></label>
+                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                        </div>
+                        <div hidden=""><input type="hidden" name="tags" value="1933230"></div>
+                        <div id="mce-responses" class="clear"></div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_a51b8074051a929013d7acc73_77fefa00c1" tabindex="-1" value="">
+                        </div>
+                        <div class="clear">
+                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Learning Planet Institute. A UN University Hub.</p>
+        <p>Questions? <a href="mailto:mood@learningplanetinstitute.org" style="color: #666; text-decoration: underline;">mood@learningplanetinstitute.org</a></p>
+    </footer>
+
+    <!-- Modal Templates -->
+    
+    <!-- Ikigai Modal -->
+    <div id="modal-ikigai" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ikigai: Finding Your Purpose</h3>
+                <button class="close-btn" onclick="closeModal('modal-ikigai')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Discover what drives you. This module guides you through a reflective journey to understand your values, strengths, and passions—and how they connect to climate action.</p>
+                <h4>What You'll Do</h4>
+                <ul>
+                    <li>Reflect on your personal values and what matters to you</li>
+                    <li>Explore your strengths and how they align with climate work</li>
+                    <li>Create your Ikigai diagram (purpose at the intersection of passion, skill, and global need)</li>
+                    <li>Engage in peer dialogue about purpose and climate action</li>
+                </ul>
+                <h4>Key Outcomes</h4>
+                <ul>
+                    <li>Clarity on your personal values and strengths</li>
+                    <li>Articulation of why climate action matters to you</li>
+                    <li>A foundation for choosing your climate focus area</li>
+                </ul>
+                <h4>Time & Format</h4>
+                <p>~2 weeks. Self-paced, with optional reflective exercises and peer feedback sessions.</p>
+                <div class="modal-footer">
+                    <button class="cta-button" onclick="document.location='https://forms.gle/GxayNNEfqip1C8EH9'">Apply Now</button>
+                    <button class="cta-button secondary" onclick="closeModal('modal-ikigai')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Climate Essentials Modal -->
+    <div id="modal-climate" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Climate Essentials</h3>
+                <button class="close-btn" onclick="closeModal('modal-climate')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Understand climate as a system. This module teaches systems thinking applied to the climate crisis—how environmental, social, and economic systems interconnect and drive global challenges.</p>
+                <h4>What You'll Do</h4>
+                <ul>
+                    <li>Learn the science of climate change and its global impacts</li>
+                    <li>Explore systemic connections between climate, economy, health, and social equity</li>
+                    <li>Analyze case studies of climate impacts in different regions</li>
+                    <li>Assess your understanding through interactive quizzes</li>
+                </ul>
+                <h4>Key Outcomes</h4>
+                <ul>
+                    <li>Systems thinking applied to climate challenges</li>
+                    <li>Understanding of climate-related inequality and justice</li>
+                    <li>Ability to frame climate problems at local and global scales</li>
+                </ul>
+                <h4>Time & Format</h4>
+                <p>~3 weeks. Video lessons, readings, quizzes, and peer discussion forums.</p>
+                <div class="modal-footer">
+                    <button class="cta-button" onclick="document.location='https://forms.gle/GxayNNEfqip1C8EH9'">Apply Now</button>
+                    <button class="cta-button secondary" onclick="closeModal('modal-climate')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story of Me Modal -->
+    <div id="modal-story" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Story of Me</h3>
+                <button class="close-btn" onclick="closeModal('modal-story')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Craft your personal climate narrative. This module helps you articulate your relationship to climate action—your fears, hopes, and the role you want to play.</p>
+                <h4>What You'll Do</h4>
+                <ul>
+                    <li>Reflect on formative experiences that shaped your worldview</li>
+                    <li>Write your personal climate story</li>
+                    <li>Share and receive peer feedback in a safe space</li>
+                    <li>Revise and refine your narrative</li>
+                </ul>
+                <h4>Key Outcomes</h4>
+                <ul>
+                    <li>A coherent personal narrative about climate and your role</li>
+                    <li>Emotional clarity about your commitment to climate action</li>
+                    <li>Material for future pitches and proposals</li>
+                </ul>
+                <h4>Time & Format</h4>
+                <p>~2 weeks. Reflective writing, peer feedback circles, and optional 1-on-1 coaching.</p>
+                <div class="modal-footer">
+                    <button class="cta-button" onclick="document.location='https://forms.gle/GxayNNEfqip1C8EH9'">Apply Now</button>
+                    <button class="cta-button secondary" onclick="closeModal('modal-story')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Foresight Modal -->
+    <div id="modal-foresight" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Foresight: Pathways for Change</h3>
+                <button class="close-btn" onclick="closeModal('modal-foresight')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Imagine future pathways. This module uses scenario planning to help you envision different futures and identify where your skills and passion fit into the solutions landscape.</p>
+                <h4>What You'll Do</h4>
+                <ul>
+                    <li>Explore multiple scenarios for climate futures (optimistic, pessimistic, likely)</li>
+                    <li>Map different response strategies and actors involved</li>
+                    <li>Identify emerging opportunities in climate action</li>
+                    <li>Draft your personal 5- and 10-year climate goals</li>
+                </ul>
+                <h4>Key Outcomes</h4>
+                <ul>
+                    <li>Expanded vision of possible climate futures</li>
+                    <li>Clarity on emerging opportunities in your chosen theme</li>
+                    <li>A personal roadmap for climate contribution</li>
+                </ul>
+                <h4>Time & Format</h4>
+                <p>~2 weeks. Scenario workshops, reading materials, and group dialogue.</p>
+                <div class="modal-footer">
+                    <button class="cta-button" onclick="document.location='https://forms.gle/GxayNNEfqip1C8EH9'">Apply Now</button>
+                    <button class="cta-button secondary" onclick="closeModal('modal-foresight')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Ideation Modal -->
+    <div id="modal-ideation" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Project Ideation & Mentoring</h3>
+                <button class="close-btn" onclick="closeModal('modal-ideation')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Turn insights into action. This module guides you in designing a locally relevant climate project. You'll work with mentors and peers to refine your idea into a concrete project proposal.</p>
+                <h4>What You'll Do</h4>
+                <ul>
+                    <li>Brainstorm locally relevant climate challenges</li>
+                    <li>Conduct preliminary research on your chosen problem</li>
+                    <li>Attend mentoring sessions to refine your project concept</li>
+                    <li>Write a project proposal with clear objectives and success measures</li>
+                    <li>Pitch your idea to peers and gather feedback</li>
+                </ul>
+                <h4>Key Outcomes</h4>
+                <ul>
+                    <li>A well-researched, evidence-informed project proposal</li>
+                    <li>Mentorship connection and ongoing support</li>
+                    <li>Readiness to move into the Build phase if desired</li>
+                </ul>
+                <h4>Time & Format</h4>
+                <p>~3 weeks. Workshops, mentoring sessions, peer feedback, and project planning work.</p>
+                <div class="modal-footer">
+                    <button class="cta-button" onclick="document.location='https://forms.gle/GxayNNEfqip1C8EH9'">Apply Now</button>
+                    <button class="cta-button secondary" onclick="closeModal('modal-ideation')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Build & Prototype Modal -->
+    <div id="modal-build" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Build & Prototype</h3>
+                <button class="close-btn" onclick="closeModal('modal-build')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Create real solutions. This module supports you in developing and testing an MVP (minimum viable product) for your project. Your work will be ready for potential incubation programs.</p>
+                <h4>What You'll Do</h4>
+                <ul>
+                    <li>Build an initial prototype (digital, physical, or service-based)</li>
+                    <li>Conduct user testing and gather feedback</li>
+                    <li>Learn social business model frameworks</li>
+                    <li>Refine your solution based on early results</li>
+                    <li>Prepare a pitch for external stakeholders or incubators</li>
+                </ul>
+                <h4>Key Outcomes</h4>
+                <ul>
+                    <li>A tested, iterated prototype ready for market or scale</li>
+                    <li>Evidence of impact and learnings from real users</li>
+                    <li>Eligibility for social entrepreneurship incubation programs</li>
+                </ul>
+                <h4>Time & Format</h4>
+                <p>~4 weeks. Hands-on building, mentoring, user testing, and iteration.</p>
+                <div class="modal-footer">
+                    <button class="cta-button" onclick="document.location='https://forms.gle/GxayNNEfqip1C8EH9'">Apply Now</button>
+                    <button class="cta-button secondary" onclick="closeModal('modal-build')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Scripts -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Close modal when clicking outside of content
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
